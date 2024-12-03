@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.test{
+    width: 50%;
+    padding: 30px;
+    margin: 50px auto;
+    background-color: crimson;
+
+    &::before{
+        content: "\2728";
+        font-size: 30px;
+        color: whitesmoke;
+    }
+    &::after{
+        content:"testttt" ;
+        font-size: 30px;
+        color: aqua;
+    }
+}
+.test2{
+    width: 50%;
+    padding: 30px;
+    margin: 50px auto;
+    background-color: cornflowerblue;
+
+    &::before{
+        content: attr(data-test);
+        color: whitesmoke;
+        font-size: 30px;
+    }
+}
+.cover{
+    width: 250px;
+    height: 250px;
+    margin: 50px auto;
+    background-color: teal;
+    position: relative;
+    &::before{
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: rgb(95, 129, 129);
+        display: block;
+        left: -100%;
+        position: absolute;
+        transition: 300ms;
+        -webkit-transition: 300ms;
+        -moz-transition: 300ms;
+        -ms-transition: 300ms;
+        -o-transition: 300ms;
+        z-index: 2;
+}
+    &::after{
+        content: attr(data-test);
+        background-color: #ddd;
+        padding: 10px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 16px;
+        -webkit-border-radius: 16px;
+        -moz-border-radius: 16px;
+        -ms-border-radius: 16px;
+        -o-border-radius: 16px;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        ;
+}
+&:hover{
+    &::before{
+        left: 0;
+    }
+}
+}
+.test3{
+ width: 250px;
+ height: 250px;
+ background-color: crimson;
+ margin: 20px auto;
+ transition: 300ms;
+}
+button:hover ~ .test3{
+    transform:translate(400px,100px);}
+
+.test4{
+      width: 200px;
+      padding: 20px;
+      margin: 20px auto;
+      background-color: aqua;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform:translate(-50%,-50%) ;
+      
+}
